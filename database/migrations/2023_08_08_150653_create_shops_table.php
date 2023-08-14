@@ -23,7 +23,10 @@ return new class extends Migration
             $table->text('description');
             $table->double('price');
             $table->double('rate');
+            $table->unsignedBigInteger('owner_id')->unsigned();
             $table->timestamps();
+
+            $table->foreign('owner_id')->references('id')->on('users');
         });
     }
 

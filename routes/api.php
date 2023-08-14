@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\api\LaundryController;
+use App\Http\Controllers\api\ManageUserController;
 use App\Http\Controllers\api\PromoController;
 use App\Http\Controllers\api\ShopController;
 use App\Http\Controllers\api\UserController;
@@ -25,7 +26,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/promos', [PromoController::class, 'readAll']);
 Route::get('/shops', [ShopController::class, 'readAll']);
 Route::get('/laundries', [LaundryController::class, 'readAll']);
-Route::get('/users', [UserController::class, 'readAll']);
 
 Route::post('/register', [UserController::class, 'register']);
 Route::post('/login', [UserController::class, 'login']);
@@ -35,7 +35,13 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/laundries/claim', [LaundryController::class, 'claim']);
 
     Route::get('/promos/limit', [PromoController::class, 'readLimit']);
+    Route::get('/promos/shop/{shopId}', [PromoController::class, 'readByShopId']);
 
     Route::get('/shops/recommendation/limit', [ShopController::class, 'readRecommendationLimit']);
     Route::get('/shops/search/city/{city}', [ShopController::class, 'searchByCity']);
+
+    Route::apiResource('/cms/users', ManageUserController::class);
+    Route::apiResource('/cms/shops', ShopController::class);
+    Route::apiResource('/cms/promos', PromoController::class);
+    Route::apiResource('/cms/laundries', LaundryController::class);
 });

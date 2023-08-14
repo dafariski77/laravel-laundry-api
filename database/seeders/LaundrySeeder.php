@@ -106,7 +106,7 @@ class LaundrySeeder extends Seeder
             ],
             [
                 'claim_code' => 'kukburuk',
-                'user_id' => 0,
+                'user_id' => 1,
                 'shop_id' => 9,
                 'weight' => 0.4,
                 'with_pickup' => 1,

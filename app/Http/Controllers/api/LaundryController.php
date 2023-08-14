@@ -3,17 +3,58 @@
 namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreLaundryRequest;
+use App\Http\Requests\UpdateLaundryRequest;
 use App\Models\Laundry;
 use Illuminate\Http\Request;
 
 class LaundryController extends Controller
 {
-    function readAll()
+    public function index()
     {
         $laundries = Laundry::with('user', 'shop')->get();
 
         return response()->json([
             "data" => $laundries
+        ], 200);
+    }
+
+    public function store(StoreLaundryRequest $request)
+    {
+        $body = $request->validated();
+        $body['user_id'] = 0;
+
+        $laundry = Laundry::creaete($body);
+
+        return response()->json([
+            'data' => $laundry
+        ], 201);
+    }
+
+    public function show(Laundry $laundry)
+    {
+        $laundry->with('user', 'shop')->get();
+
+        return response()->json([
+            'data' => $laundry
+        ], 200);
+    }
+
+    public function update(UpdateLaundryRequest $request, Laundry $laundry)
+    {
+        $laundry->update($request->validated());
+
+        return response()->json([
+            'data' => $laundry
+        ], 200);
+    }
+
+    public function destroy(Laundry $laundry)
+    {
+        $laundry->delete();
+
+        return response()->json([
+            'message' => 'Data deleted!'
         ], 200);
     }
 
@@ -32,6 +73,7 @@ class LaundryController extends Controller
         ], 200);
     }
 
+    // Untuk Tracking Status Laundry, claim jika ingin memantaunya. Tidak otomatis ada
     function claim(Request $request)
     {
         $laundry = Laundry::where([
@@ -61,7 +103,7 @@ class LaundryController extends Controller
         }
 
         return response()->json([
-            "data" => $updated
+            "data" => $laundry
         ]);
     }
 }

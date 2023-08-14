@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('laundries', function (Blueprint $table) {
             $table->id();
             $table->string('claim_code');
-            $table->bigInteger('user_id');
-            $table->bigInteger('shop_id');
+            $table->unsignedBigInteger('user_id')->unsigned()->nullable();
+            $table->unsignedBigInteger('shop_id')->unsigned();
             $table->double('weight');
             $table->boolean('with_pickup');
             $table->boolean('with_delivery');
@@ -25,6 +25,9 @@ return new class extends Migration
             $table->text('description');
             $table->string('status');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('shop_id')->references('id')->on('shops');
         });
     }
 

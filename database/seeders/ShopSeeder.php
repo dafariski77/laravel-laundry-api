@@ -25,6 +25,7 @@ class ShopSeeder extends Seeder
                 'description' => 'Laundry refers to the washing of clothing and other textiles, and, more broadly, their drying and ironing as well. Laundry has been part of history since humans began to wear clothes, so the methods by which different cultures have dealt with this universal human need are of interest to several branches of scholarship.',
                 'price' => 17000,
                 'rate' => 4.1,
+                'owner_id' => 2
             ],
             [
                 'image' => 'blue white lock.jpg',
@@ -37,6 +38,7 @@ class ShopSeeder extends Seeder
                 'description' => 'Laundry refers to the washing of clothing and other textiles, and, more broadly, their drying and ironing as well. Laundry has been part of history since humans began to wear clothes, so the methods by which different cultures have dealt with this universal human need are of interest to several branches of scholarship.',
                 'price' => 23000,
                 'rate' => 4.3,
+                'owner_id' => 2
             ],
             [
                 'image' => 'cling set.jpg',
@@ -49,6 +51,7 @@ class ShopSeeder extends Seeder
                 'description' => 'Laundry refers to the washing of clothing and other textiles, and, more broadly, their drying and ironing as well. Laundry has been part of history since humans began to wear clothes, so the methods by which different cultures have dealt with this universal human need are of interest to several branches of scholarship.',
                 'price' => 15000,
                 'rate' => 4.2,
+                'owner_id' => 2
             ],
             [
                 'image' => 'escape d laundry.jpg',
@@ -61,6 +64,7 @@ class ShopSeeder extends Seeder
                 'description' => 'Laundry refers to the washing of clothing and other textiles, and, more broadly, their drying and ironing as well. Laundry has been part of history since humans began to wear clothes, so the methods by which different cultures have dealt with this universal human need are of interest to several branches of scholarship.',
                 'price' => 31000,
                 'rate' => 4.9,
+                'owner_id' => 2
             ],
             [
                 'image' => 'luxury grey.jpg',
@@ -73,6 +77,7 @@ class ShopSeeder extends Seeder
                 'description' => 'Laundry refers to the washing of clothing and other textiles, and, more broadly, their drying and ironing as well. Laundry has been part of history since humans began to wear clothes, so the methods by which different cultures have dealt with this universal human need are of interest to several branches of scholarship.',
                 'price' => 16000,
                 'rate' => 4.0,
+                'owner_id' => 2
             ],
             [
                 'image' => 'maclean jet.jpg',
@@ -85,6 +90,7 @@ class ShopSeeder extends Seeder
                 'description' => 'Laundry refers to the washing of clothing and other textiles, and, more broadly, their drying and ironing as well. Laundry has been part of history since humans began to wear clothes, so the methods by which different cultures have dealt with this universal human need are of interest to several branches of scholarship.',
                 'price' => 20000,
                 'rate' => 4.5,
+                'owner_id' => 2
             ],
             [
                 'image' => 'rubber wil.jpg',
@@ -97,6 +103,7 @@ class ShopSeeder extends Seeder
                 'description' => 'Laundry refers to the washing of clothing and other textiles, and, more broadly, their drying and ironing as well. Laundry has been part of history since humans began to wear clothes, so the methods by which different cultures have dealt with this universal human need are of interest to several branches of scholarship.',
                 'price' => 19500,
                 'rate' => 4.1,
+                'owner_id' => 2
             ],
             [
                 'image' => 'street brush.jpg',
@@ -109,6 +116,7 @@ class ShopSeeder extends Seeder
                 'description' => 'Laundry refers to the washing of clothing and other textiles, and, more broadly, their drying and ironing as well. Laundry has been part of history since humans began to wear clothes, so the methods by which different cultures have dealt with this universal human need are of interest to several branches of scholarship.',
                 'price' => 20000,
                 'rate' => 4.2,
+                'owner_id' => 2
             ],
             [
                 'image' => 'undercover set.jpg',
@@ -121,6 +129,7 @@ class ShopSeeder extends Seeder
                 'description' => 'Laundry refers to the washing of clothing and other textiles, and, more broadly, their drying and ironing as well. Laundry has been part of history since humans began to wear clothes, so the methods by which different cultures have dealt with this universal human need are of interest to several branches of scholarship.',
                 'price' => 20000,
                 'rate' => 4.2,
+                'owner_id' => 2
             ],
             [
                 'image' => 'white room.jpg',
@@ -133,6 +142,7 @@ class ShopSeeder extends Seeder
                 'description' => 'Laundry refers to the washing of clothing and other textiles, and, more broadly, their drying and ironing as well. Laundry has been part of history since humans began to wear clothes, so the methods by which different cultures have dealt with this universal human need are of interest to several branches of scholarship.',
                 'price' => 22000,
                 'rate' => 4.4,
+                'owner_id' => 2
             ],
         ];
 

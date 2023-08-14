@@ -14,6 +14,11 @@ class Shop extends Model
         return $this->hasMany(Laundry::class);
     }
 
+    public function owner()
+    {
+        return $this->belongsTo(User::class);
+    }
+
     protected $fillable = [
         'image',
         'name',
@@ -24,6 +29,7 @@ class Shop extends Model
         'whatsapp',
         'description',
         'price',
-        'rate'
+        'rate',
+        'owner_id'
     ];
 }
