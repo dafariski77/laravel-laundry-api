@@ -46,13 +46,24 @@ class UserController extends Controller
             ], 401);
         }
 
-        $user = User::where('email', $request->email)->firstOrFail();
+        $user = $request->user();
 
-        $token = $user->createToken('auth_token')->plainTextToken;
+        $role = User::find($user->id);
+        $roleName = $role->role->name;
+        
+        $token = $user->createToken('auth_token', [$roleName])->plainTextToken;
 
         return response()->json([
             "data" => $user,
             "token" => $token
+        ], 200);
+    }
+
+    public function logout(Request $request)
+    {
+        $request->user()->tokens()->delete();
+        return response()->json([
+            "message" => "Logged out successfully!"
         ], 200);
     }
 }

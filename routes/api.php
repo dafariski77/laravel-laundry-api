@@ -30,7 +30,7 @@ Route::get('/laundries', [LaundryController::class, 'readAll']);
 Route::post('/register', [UserController::class, 'register']);
 Route::post('/login', [UserController::class, 'login']);
 
-Route::middleware('auth:sanctum')->group(function () {
+Route::middleware(['auth:sanctum', 'ability:user,owner,admin'])->group(function () {
     Route::get('/laundries/user', [LaundryController::class, 'readByUserId']);
     Route::post('/laundries/claim', [LaundryController::class, 'claim']);
 
@@ -40,8 +40,17 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/shops/recommendation/limit', [ShopController::class, 'readRecommendationLimit']);
     Route::get('/shops/search/city/{city}', [ShopController::class, 'searchByCity']);
 
-    Route::apiResource('/cms/users', ManageUserController::class);
+    Route::post('/logout', [UserController::class, 'logout']);
+});
+
+Route::middleware(['auth:sanctum', 'ability:owner,admin'])->group(function () {
     Route::apiResource('/cms/shops', ShopController::class);
+
     Route::apiResource('/cms/promos', PromoController::class);
+
     Route::apiResource('/cms/laundries', LaundryController::class);
+});
+
+Route::middleware(['auth:sanctum', 'ability:admin'])->group(function () {
+    Route::apiResource('/cms/users', ManageUserController::class);
 });
